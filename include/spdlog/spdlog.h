@@ -140,39 +140,39 @@ inline void log(level::level_enum lvl, format_string_t<Args...> fmt, Args &&... 
 }
 
 template<typename... Args>
-inline void trace(format_string_t<Args...> fmt, Args &&... args)
+inline void _trace(format_string_t<Args...> fmt, Args &&... args)
 {
-    default_logger_raw()->trace(fmt, std::forward<Args>(args)...);
+    default_logger_raw()->_trace(fmt, std::forward<Args>(args)...);
 }
 
 template<typename... Args>
-inline void debug(format_string_t<Args...> fmt, Args &&... args)
+inline void _debug(format_string_t<Args...> fmt, Args &&... args)
 {
-    default_logger_raw()->debug(fmt, std::forward<Args>(args)...);
+    default_logger_raw()->_debug(fmt, std::forward<Args>(args)...);
 }
 
 template<typename... Args>
-inline void info(format_string_t<Args...> fmt, Args &&... args)
+inline void _info(format_string_t<Args...> fmt, Args &&... args)
 {
-    default_logger_raw()->info(fmt, std::forward<Args>(args)...);
+    default_logger_raw()->_info(fmt, std::forward<Args>(args)...);
 }
 
 template<typename... Args>
-inline void warn(format_string_t<Args...> fmt, Args &&... args)
+inline void _warn(format_string_t<Args...> fmt, Args &&... args)
 {
-    default_logger_raw()->warn(fmt, std::forward<Args>(args)...);
+    default_logger_raw()->_warn(fmt, std::forward<Args>(args)...);
 }
 
 template<typename... Args>
-inline void error(format_string_t<Args...> fmt, Args &&... args)
+inline void _error(format_string_t<Args...> fmt, Args &&... args)
 {
-    default_logger_raw()->error(fmt, std::forward<Args>(args)...);
+    default_logger_raw()->_error(fmt, std::forward<Args>(args)...);
 }
 
 template<typename... Args>
-inline void critical(format_string_t<Args...> fmt, Args &&... args)
+inline void _critical(format_string_t<Args...> fmt, Args &&... args)
 {
-    default_logger_raw()->critical(fmt, std::forward<Args>(args)...);
+    default_logger_raw()->_critical(fmt, std::forward<Args>(args)...);
 }
 
 template<typename T>
@@ -238,39 +238,39 @@ inline void critical(wformat_string_t<Args...> fmt, Args &&... args)
 #endif
 
 template<typename T>
-inline void trace(const T &msg)
+inline void _trace(const T &msg)
 {
-    default_logger_raw()->trace(msg);
+    default_logger_raw()->_trace(msg);
 }
 
 template<typename T>
-inline void debug(const T &msg)
+inline void _debug(const T &msg)
 {
-    default_logger_raw()->debug(msg);
+    default_logger_raw()->_debug(msg);
 }
 
 template<typename T>
-inline void info(const T &msg)
+inline void _info(const T &msg)
 {
-    default_logger_raw()->info(msg);
+    default_logger_raw()->_info(msg);
 }
 
 template<typename T>
-inline void warn(const T &msg)
+inline void _warn(const T &msg)
 {
-    default_logger_raw()->warn(msg);
+    default_logger_raw()->_warn(msg);
 }
 
 template<typename T>
-inline void error(const T &msg)
+inline void _error(const T &msg)
 {
-    default_logger_raw()->error(msg);
+    default_logger_raw()->_error(msg);
 }
 
 template<typename T>
-inline void critical(const T &msg)
+inline void _critical(const T &msg)
 {
-    default_logger_raw()->critical(msg);
+    default_logger_raw()->_critical(msg);
 }
 
 } // namespace spdlog

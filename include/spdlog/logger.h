@@ -141,37 +141,37 @@ public:
     }
 
     template<typename... Args>
-    void trace(format_string_t<Args...> fmt, Args &&... args)
+    void _trace(format_string_t<Args...> fmt, Args &&... args)
     {
         log(level::trace, fmt, std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void debug(format_string_t<Args...> fmt, Args &&... args)
+    void _debug(format_string_t<Args...> fmt, Args &&... args)
     {
         log(level::debug, fmt, std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void info(format_string_t<Args...> fmt, Args &&... args)
+    void _info(format_string_t<Args...> fmt, Args &&... args)
     {
         log(level::info, fmt, std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void warn(format_string_t<Args...> fmt, Args &&... args)
+    void _warn(format_string_t<Args...> fmt, Args &&... args)
     {
         log(level::warn, fmt, std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void error(format_string_t<Args...> fmt, Args &&... args)
+    void _error(format_string_t<Args...> fmt, Args &&... args)
     {
         log(level::err, fmt, std::forward<Args>(args)...);
     }
 
     template<typename... Args>
-    void critical(format_string_t<Args...> fmt, Args &&... args)
+    void _critical(format_string_t<Args...> fmt, Args &&... args)
     {
         log(level::critical, fmt, std::forward<Args>(args)...);
     }
@@ -262,37 +262,37 @@ public:
 #endif
 
     template<typename T>
-    void trace(const T &msg)
+    void _trace(const T &msg)
     {
         log(level::trace, msg);
     }
 
     template<typename T>
-    void debug(const T &msg)
+    void _debug(const T &msg)
     {
         log(level::debug, msg);
     }
 
     template<typename T>
-    void info(const T &msg)
+    void _info(const T &msg)
     {
         log(level::info, msg);
     }
 
     template<typename T>
-    void warn(const T &msg)
+    void _warn(const T &msg)
     {
         log(level::warn, msg);
     }
 
     template<typename T>
-    void error(const T &msg)
+    void _error(const T &msg)
     {
         log(level::err, msg);
     }
 
     template<typename T>
-    void critical(const T &msg)
+    void _critical(const T &msg)
     {
         log(level::critical, msg);
     }
