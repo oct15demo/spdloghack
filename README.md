@@ -5,3 +5,16 @@ This is a demo of a modified version of spdlog, https://github.com/gabime/spdlog
 One more thing included is a python script that calls the a.out C/C++ program. If you use Eclipse CDT and have pydev also installed, you can run your C/++ program from the python wrapper, and the log console output will link to the source code line.
 
 You can see the changes I made to spdlog.h and logger.h by checking the history of the files. Also, if referring to the docs in the original spdlog project, you'll need to substitute the names I modified if they refer to a function called by logger. All the changed names simply have an underscore prepended, so logptr->debug("hello logger") becomes logptr->_debug("hello logger"). But all the changes are simple and can be further modified, the headers returned to their original state in fact if you change the names used in main.h.
+
+All the code in include/spdlog is from https://github.com/gabime/spdlog except for aforementioned small changes to spdlog.h and logger.h
+
+The resulting syntax of this setup is very Java log4j like. For any source file, you would just need to do the following:
+1) Include the header that contains the macros and getLog() function (in this example, main.h)
+2) Get the logger
+    
+    static spdlog::logger logger = getLog();
+  
+And you are good to go.
+
+    logger.info("hello log");
+
