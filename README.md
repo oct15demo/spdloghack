@@ -11,10 +11,13 @@ All the code in include/spdlog is from https://github.com/gabime/spdlog except f
 The resulting syntax of this setup is very Java log4j like. For any source file, you would just need to do the following:
 1) Include the header that contains the macros and getLog() function (in this example, main.h)
 2) Get the logger
-    
-     static spdlog::logger logger = getLog();
-  
-And you are good to go.
 
-    logger.info("hello log");
+And you are good to go.
+    
+    #include "main.h"
+    
+    static spdlog::logger logger = getLog();
+    ...
+    void foo(){
+       logger.info("hello log");
 
