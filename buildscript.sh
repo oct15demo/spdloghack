@@ -1,1 +1,1 @@
-g++ -std=c++2a main.cpp -Iinclude
+g++ -std=c++2a main.cpp notmain.cpp -Iinclude
