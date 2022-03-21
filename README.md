@@ -12,7 +12,7 @@ The resulting syntax of this setup is very Java log4j like. For any source file,
 1) Include the header that contains the macros and getLog() function (in this example, main.h)
 2) Get the logger
     
-    static spdlog::logger logger = getLog();
+     static spdlog::logger logger = getLog();
   
 And you are good to go.
 
